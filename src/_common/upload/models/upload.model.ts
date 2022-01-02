@@ -9,32 +9,32 @@ import {
   AllowNull,
 } from 'sequelize-typescript';
 
-@Table({ timestamps: true, tableName: 'UploadFiles' })
+@Table({ timestamps: true, tableName: 'files' })
 @ObjectType()
-export class upload extends Model<upload> {
+export class file extends Model<file> {
   @PrimaryKey
   @Default(DataType.UUIDV4)
   @Column({ type: DataType.UUID })
   @Field(() => ID)
-  id: String;
+  id: string;
 
   @AllowNull(false)
   @Column
   @Field(() => String)
-  name: String;
+  name: string;
 
   @AllowNull(false)
   @Column
   @Field(() => String)
-  path: String;
+  path: string;
 
   @AllowNull(false)
   @Column
   @Field(() => String)
-  size: String;
+  size: string;
 
   @AllowNull(false)
   @Column
   @Field(() => String)
-  mimeType: String;
+  mimeType: string;
 }
